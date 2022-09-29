@@ -81,7 +81,7 @@ const Home = () => {
         if (data.status === 200) {
             let date = new Date(result.location.localtime_epoch * 1000)
             let dt = date.getHours()
-            let minute = date.getMinutes();
+            let minute = date.getMinutes()<=9 ? `0${date.getMinutes()}` : date.getMinutes();
             let amorpm = dt === 0 ? `${dt + 12}:${minute} AM` : (dt < 12 ? `${dt}:${minute} AM` : (dt === 12 ? `${dt}:${minute} PM` : `${dt - 12}:${minute} PM`))
             setWeatherData({
                 currTemp: result.current.temp_c,

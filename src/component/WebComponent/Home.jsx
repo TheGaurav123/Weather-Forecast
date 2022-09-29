@@ -79,8 +79,10 @@ const Home = () => {
         const result = await data.json()
 
         if (data.status === 200) {
-            let dt = new Date(result.location.localtime_epoch * 1000).getHours()
-            let amorpm = dt === 0 ? `${dt + 12}:00 AM` : (dt < 12 ? `${dt}:00 AM` : (dt === 12 ? `${dt}:00 PM` : `${dt - 12}:00 PM`))
+            let date = new Date(result.location.localtime_epoch * 1000)
+            let dt = date.getHours()
+            let minute = date.getMinutes();
+            let amorpm = dt === 0 ? `${dt + 12}:${minute} AM` : (dt < 12 ? `${dt}:${minute} AM` : (dt === 12 ? `${dt}:${minute} PM` : `${dt - 12}:${minute} PM`))
             setWeatherData({
                 currTemp: result.current.temp_c,
                 currState: result.current.condition.text,
@@ -396,7 +398,7 @@ const Home = () => {
                     <div className="top-section">
                         <div className="curr-location">
                             <img src={LocationIcon} alt="your location" />
-                            <input type="text" placeholder='Search' onChange={(event) => {
+                            <input type="text" placeholder='Search...' onChange={(event) => {
                                 setInput(event.target.value)
                                 setUsrLoc({
                                     lat: '',
@@ -405,14 +407,14 @@ const Home = () => {
                             }} />
                         </div>
                         <div className="day-Night-Toggle">
-                            <img src={MobSun} className={weatherData.dayornight === 1 ? 'toggle' : null} alt="Day" />
-                            <img src={MobMoon} className={weatherData.dayornight === 0 ? 'toggle' : null} alt="Night" />
+                            <img src={weatherData.dayornight===1 ? MobSun : MobMoon} className='toggle' alt="Day" />
                         </div>
                     </div>
                     <h4 style={{
-                        fontSize : '2rem',
+                        fontSize : '2.5rem',
                         marginTop : '1rem',
-                        marginLeft : '7rem'
+                        marginLeft : '7rem',
+                        letterSpacing : '1px'
                     }} id='cityHide'>{`${weatherData.city}, ${weatherData.state}, ${weatherData.country}`}</h4>
                     <h5 id='errorDiv' style={{ display: 'block', fontSize: '2rem', textAlign: 'center', marginTop: '2rem' }}>Location Not Found...</h5>
 

@@ -398,12 +398,12 @@ html {
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
+        height:100vh;
     }
-
+    
     .mob-Container {
         display: grid;
         padding: var(--default-padding);
-        height: 100vh;
     }
 
     .mob-box {
@@ -463,15 +463,30 @@ html {
 
     .day-Night-Toggle {
         padding: .1rem .2rem;
-        background-color: rgba(255, 255, 255, 0.232);
+        /* background-color: rgba(255, 255, 255, 0.232); */
         border-radius: 50px;
         width: 28%;
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-end;
+        
     }
 
+    @keyframes daynightanima {
+        0%{
+            box-shadow: white 0px 0px 0px;
+        }
+        50%{
+            box-shadow: white 0px 0px 10px;
+        }
+        100%{
+            box-shadow: white 0px 0px 0px;
+        }
+    }
+
+
     .day-Night-Toggle img {
-        width: 7rem;
+        width: 8rem;
+        animation: daynightanima 3s ease-in-out infinite;
     }
 
     .toggle {
@@ -590,15 +605,16 @@ html {
     }
 }
 
+
 @media (min-width:320px) and (max-width:375px){
     html{
-        font-size: 23%;
+        font-size: 22%;
     }
 }
 
 @media (max-width:360px){
     html{
-        font-size: 28%;
+        font-size: 23%;
     }
 }
 
@@ -607,3 +623,4 @@ html {
         font-size: 18%;
     }
 }
+

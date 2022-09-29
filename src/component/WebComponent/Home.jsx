@@ -389,9 +389,7 @@ const Home = () => {
                 S M A L L    S C R E E N   D E V I C E S
 -------------------------------------------------------------------------*/}
 
-            <div className="mob-Container"  style={{
-                backgroundImage: `url(${setBg()})`
-            }}>
+            <div className="mob-Container">
 
                 <div className="mob-box">
 

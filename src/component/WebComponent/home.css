@@ -388,15 +388,13 @@ html {
 
     body {
         color: white;
-        /* background-image: url('../images/phoneicon/mobnightbg.gif'); */
+        background-image: url('../images/phoneicon/mobnightbg.gif');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
     }
 
     .mob-Container {
-        background-size: cover;
-        background-repeat: no-repeat;
         display: grid;
         padding: var(--default-padding);
         height: 100vh;

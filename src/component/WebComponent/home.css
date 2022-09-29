@@ -354,13 +354,7 @@ html {
     }
 }
 
-@media (max-width:1618px) {
-    html {
-        font-size: 54.5%;
-    }
-}
-
-@media (max-width:1617px) {
+@media (min-width:1617px) and (max-width:1720) {
     html {
         font-size: 40.5%;
     }
@@ -377,6 +371,8 @@ html {
         font-size: 30.5%;
     }
 }
+
+
 
 @media (max-width:820px) {
     html {

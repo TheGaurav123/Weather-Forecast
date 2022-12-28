@@ -61,5 +61,5 @@ Start the server
 
 ## Tech Stack
 
-**Client:** React, CSS
+**Client:** React, CSS, API
 
